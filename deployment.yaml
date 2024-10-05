@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: devops-003-pipeline-aws-deployment
 spec:
-  replicas: 5
+  replicas: 10
   selector:
     matchLabels:
       app: devops-003-pipeline-aws
