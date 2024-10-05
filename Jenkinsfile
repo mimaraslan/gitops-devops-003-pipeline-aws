@@ -20,7 +20,7 @@ pipeline {
                 git branch: 'master', credentialsId: 'github', url: 'https://github.com/mimaraslan/gitops-devops-003-pipeline-aws'
             }
         }
-
+        
         stage("Update the Deployment Tags") {
             steps {
                 sh """
