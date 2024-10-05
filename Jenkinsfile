@@ -2,6 +2,7 @@ pipeline {
     agent {
         label 'My-Jenkins-Agent'
     }
+    
     environment {
         APP_NAME = "devops-003-pipeline-aws"
     }
@@ -15,22 +16,17 @@ pipeline {
 
         stage('Checkout from SCM') {
             steps {
-                //   checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mimaraslan/devops-003-pipeline-aws']])
-                git branch: 'master', credentialsId: 'github', url: 'https://github.com/mimaraslan/devops-003-pipeline-aws'
+                //   checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mimaraslan/gitops-devops-003-pipeline-aws']])
+                git branch: 'master', credentialsId: 'github', url: 'https://github.com/mimaraslan/gitops-devops-003-pipeline-aws'
             }
         }
 
-
-
-
-        stage('Update to Deployment Tags') {
+        stage("Update the Deployment Tags") {
             steps {
                 sh """
-                    cat deployment.yaml
-
-                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
-
-                    cat deployment.yaml
+                   cat deployment.yaml
+                   sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+                   cat deployment.yaml
                 """
             }
         }
