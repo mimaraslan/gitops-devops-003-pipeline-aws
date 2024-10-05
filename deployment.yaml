@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-003-pipeline-aws:1.0.45
+  name: devops-003-pipeline-aws:1.0.54
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: devops-003-pipeline-aws:1.0.45
+      app: devops-003-pipeline-aws:1.0.54
   template:
     metadata:
       labels:
-        app: devops-003-pipeline-aws:1.0.45
+        app: devops-003-pipeline-aws:1.0.54
     spec:
       containers:
-      - name: devops-003-pipeline-aws:1.0.45
-        image: mimaraslan/devops-003-pipeline-aws:1.0.45
+      - name: devops-003-pipeline-aws:1.0.54
+        image: mimaraslan/devops-003-pipeline-aws:1.0.54
         resources:
           limits:
             memory: "256Mi"
