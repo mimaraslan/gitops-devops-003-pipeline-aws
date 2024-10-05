@@ -6,14 +6,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: devops-003-pipeline-aws:1.0.67
+      app: devops-003-pipeline-aws
   template:
     metadata:
       labels:
-        app: devops-003-pipeline-aws:1.0.67
+        app: devops-003-pipeline-aws
     spec:
       containers:
-      - name: devops-003-pipeline-aws:1.0.67
+      - name: devops-003-pipeline-aws
         image: mimaraslan/devops-003-pipeline-aws:1.0.67
         resources:
           limits:
